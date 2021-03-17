@@ -17,6 +17,9 @@ class CreateJobsTable extends Migration
             $table->id();
             $table->string("datePosted",100);
             $table->string("title",100);
+            $table->string("autonomia",50);
+            $table->string('provincia',50);
+            $table->string('localidad',50);
             $table->text("excerpt")->nullable();
             $table->string("jobUrl");
             $table->string("jobSource");
@@ -25,7 +28,7 @@ class CreateJobsTable extends Migration
             $table->string("workingDay", 50)->nullable();
             $table->string("experience", 50)->nullable();
             $table->string("vacancies", 50)->nullable();
-            $table->string("salary", 50)->nullable();
+            $table->string("salario", 50)->nullable();
             $table->timestamps();
         });
     }

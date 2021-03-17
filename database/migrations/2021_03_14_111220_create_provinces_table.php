@@ -15,8 +15,6 @@ class CreateProvincesTable extends Migration
     {
         Schema::create('provinces', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("job_id");
-            $table->foreign("job_id")->references("id")->on("jobs");
             $table->string("name",50);
             $table->timestamps();
         });

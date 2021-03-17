@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCommunitiesTable extends Migration
+class CreateRegionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateCommunitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('communities', function (Blueprint $table) {
+        Schema::create('regions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("job_id")->nullable();
-            $table->foreign("job_id")->references("id")->on("jobs");
-            $table->unsignedBigInteger("province_id")->nullable();
-            $table->foreign("province_id")->references("id")->on("Provinces");
             $table->string("name", 50)->unique();
             $table->timestamps();
         });
@@ -31,6 +27,6 @@ class CreateCommunitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('communities');
+        Schema::dropIfExists('regions');
     }
 }
